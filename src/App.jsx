@@ -15,6 +15,7 @@ function App() {
         setLoading(false);
       } catch (err) {
         setError("Failed to fetch countries data");
+        console.error("Failed to fetch countries data", err)
         setLoading(false);
       }
     };
