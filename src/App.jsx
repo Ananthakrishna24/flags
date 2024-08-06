@@ -14,11 +14,12 @@ function App() {
         setCountries(response.data);
         setLoading(false);
       } catch (err) {
-        setError("Failed to fetch countries data");
-        console.error("Failed to fetch countries data", err)
-        setLoading(false);
-      }
-    };
+      const errorMessage = `Error fetching data: ${err.message}`;
+      console.error(errorMessage);
+      setError(errorMessage);
+      setLoading(false);
+    }
+  };
 
     fetchCountries();
   }, []);
